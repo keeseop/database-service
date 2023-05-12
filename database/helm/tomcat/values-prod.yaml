@@ -1,8 +1,8 @@
 image:
   registry: docker.io
-  repository: kubetm/database-service   # kubetm -> 개인 <docker id>로 변경
+  repository: ksshintest/study_test   # kubetm -> 개인 <docker id>로 변경
   tag: latest
-# docker build -t kubetm/database-service:latest
+# docker build -t ksshintest/study_test:latest
 
 tomcatAllowRemoteManagement: 1
 
@@ -11,8 +11,8 @@ persistence:
 
 service:
   type: NodePort
-  nodePort: "30082"  # dev(30081), qa(30082), prod(30083)
+  nodePort: "30083"  # dev(30081), qa(30082), prod(30083)
 
 extraEnvVars:
   - name: JAVA_OPTS
-    value: '-Dspring.profiles.active=qa'
+    value: '-Dspring.profiles.active=prod'
